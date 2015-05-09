@@ -13,6 +13,7 @@ var SearchInputView = Backbone.View.extend({
   keyDown: function(event){
     if (event.keyCode === 13) {
       this.collection.loadResults(this.$el.val());
+      this.$el.val('');
     }
   },
 
