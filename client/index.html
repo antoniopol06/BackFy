@@ -113,7 +113,10 @@
         background-color: #fff;
         padding: 10px 2px;
         border-radius: 5px;
-        margin-bottom: 0.5em;
+        display: block;
+        margin:0px auto 0.5em auto;
+        position: relative;
+        z-index: 500;
       }
 
       .song-list img {
@@ -121,6 +124,26 @@
         height: 40px;
         margin-right: 5px;
         border-radius: 2px;
+      }
+
+      .loading {
+        z-index: 1000;
+        opacity: 0.1;
+        background-color: #000;
+        height:50px;
+        padding: 10px 2px;
+        border-radius: 5px;
+        display: block;
+        margin:0px auto 0.5em auto;
+        position: absolute;
+        top:0px;
+        left:0px;
+      }
+
+      .song-list:nth-child(2){
+        width: 95%;
+        height: 50px;
+        font-size: 0.75em;
       }
 
       .song-list * {

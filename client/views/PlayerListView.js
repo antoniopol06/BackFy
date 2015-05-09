@@ -5,6 +5,9 @@ var PlayerListView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    this.collection.on('nextSong', function(song) {
+      this.collection.remove(song);
+    }, this);
   },
 
   render: function(){
@@ -17,8 +20,8 @@ var PlayerListView = Backbone.View.extend({
       this.$el.html('<p>UPS! nothing in your playlist</p>');
     }else{
       this.$el.html('<h6>PLAYLIST</h6>').append(
-        this.collection.map(function(song){
-          return new PlayerEntryView({model: song}).render()
+        this.collection.map(function(song, index){
+          return new PlayerEntryView({model: song}).render(index)
         })
       );
     }

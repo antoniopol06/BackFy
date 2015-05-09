@@ -5,11 +5,19 @@ var PlayerView = Backbone.View.extend({
   initialize: function() {
   },
 
+  events: {
+    'timeupdate': function(event) {
+      var audio = event.target;
+      var percent = Math.floor((audio.currentTime / audio.duration) * 100);
+      $('.loading').css({width: percent + "%"});
+    },
+    'ended': function(event) {
+      this.model.nextSong();
+    }
+  },
+
   setSong: function(song){
     this.model = song;
-    if(!this.model){
-      this.el.pause();
-    }
     this.render();
   },
 
