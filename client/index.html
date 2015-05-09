@@ -187,6 +187,25 @@
         $('#search-box').append(appSearchView.render());
       });
     </script>
+
+    <script type='text/template' id='entryview'>
+      <% if(indexElement == 0) { %> 
+        <div class='loading'></div> 
+      <% } %>
+      <img src='<%= album.images[0].url %>'/>
+      <%= name.length > 30 ? name.replace(name.slice(30), "...") : name %>
+    </script>
+
+    <script type='text/template' id='searchentry'>
+      <div class="img">
+        <img src="<%= album.images[0].url %>"/>
+      </div>
+      <div class="info">
+        <b><%= artists[0].name %></b>
+        <p><%= name %></p>
+      </div>
+    </script>
+
     <div id='playlist'>
     </div>
     <div id='search-box'>

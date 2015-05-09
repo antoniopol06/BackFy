@@ -3,7 +3,9 @@ var SearchEntryView = Backbone.View.extend({
 
   className: 'pointer song',
 
-  template: _.template('<div class="img"><img src="<%= album.images[0].url %>"/></div><div class="info"><b><%= artists[0].name %></b><p><%= name %></p></div>'),
+  initialize: function() {
+    this.template = _.template($('#searchentry').html());
+  },
 
   events: {
     'click': function(event){

@@ -4,7 +4,6 @@ var AppModel = Backbone.Model.extend({
     this.set('searchList', new SearchListCollection());
     this.set('currentSong', new SongModel());
     this.set('playerList', new PlayListCollection());
-
   }
 
 });
